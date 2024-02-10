@@ -3,20 +3,16 @@ const path = require("path");
 
 const router = express.Router();
 
-const routes = [
-    { path: "/", filePath: "/public/index.html" },
-    { path: "/notes", filePath: "/public/notes.html" }
-];
+// GET request
+router.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/notes.html"));
+    // console.log("router get htmlroutes notes.html");
+});
 
-const handleRoute = (req, res, filePath) => {
-    console.log(`${req.method} for ${req.path}`);
-    res.sendFile(path.join(__dirname, filePath));
-};
-
-routes.forEach(({ path: routePath, filePath }) => {
-    router.get(routePath, (req, res) => {
-        handleRoute(req, res, filePath);
-    });
+// Return to Homepage 
+router.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+    // console.log("router get htmlroutes index.html");
 });
 
 module.exports = router;
