@@ -23,4 +23,4 @@ Contact me for any further questions or help!
 - GitHub: Laulecmor
 - Email: Lauren.morrison00@gmail.com
 
-Deployed Link @ 
+Deployed Link @ https://classnote-taker-b6b8641c47ec.herokuapp.com/notes
